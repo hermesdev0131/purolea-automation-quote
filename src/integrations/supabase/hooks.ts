@@ -4,7 +4,7 @@ import { Tables, TablesInsert, TablesUpdate } from './types';
 
 // Products hooks
 export const useProducts = () => {
-  console.log("111111111111");
+  
   return useQuery({
     queryKey: ['products'],
     queryFn: async () => {

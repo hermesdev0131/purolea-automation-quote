@@ -164,7 +164,7 @@ export type Database = {
       quotes: {
         Row: {
           id: string
-          product_id: string | null
+          product_name: string | null
           quantity: number
           formula_cost: number | null
           packaging_cost: number | null
@@ -173,12 +173,13 @@ export type Database = {
           total_unit_cost: number | null
           client_name: string | null
           client_email: string | null
+          pdf_upload: string | null
           created_by: string | null
           created_at: string
         }
         Insert: {
           id?: string
-          product_id?: string | null
+          product_name: string | null
           quantity: number
           formula_cost?: number | null
           packaging_cost?: number | null
@@ -187,12 +188,13 @@ export type Database = {
           total_unit_cost?: number | null
           client_name?: string | null
           client_email?: string | null
+          pdf_upload: string | null
           created_by?: string | null
           created_at?: string
         }
         Update: {
           id?: string
-          product_id?: string | null
+          product_name?: string | null
           quantity?: number
           formula_cost?: number | null
           packaging_cost?: number | null
@@ -201,18 +203,10 @@ export type Database = {
           total_unit_cost?: number | null
           client_name?: string | null
           client_email?: string | null
+          pdf_upload: string | null
           created_by?: string | null
           created_at?: string
         }
-        Relationships: [
-          {
-            foreignKeyName: "quotes_product_id_fkey"
-            columns: ["product_id"]
-            isOneToOne: false
-            referencedRelation: "products"
-            referencedColumns: ["id"]
-          }
-        ]
       }
     }
     Views: {
